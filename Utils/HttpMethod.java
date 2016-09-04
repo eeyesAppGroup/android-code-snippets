@@ -13,7 +13,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * retrofit 网络请求封装的方法
+ * retrofit网络请求封装的类
  * Created by lin on 2016/8/28.
  * Bean:DLAvailableRoomResult
  */
@@ -27,6 +27,7 @@ public class HttpMethod {
     private DLAvailableRoomService dlAvailableRoomService;
 
     private HttpMethod(){
+        //如果有多个不同的网络请求,应该将此步骤封装在DLAvailableRoomService的factory类里
         OkHttpClient.Builder okHttpClientBuilder=new OkHttpClient.Builder();
         okHttpClientBuilder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
         retrofit = new Retrofit.Builder()
